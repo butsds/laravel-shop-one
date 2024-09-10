@@ -1,0 +1,9 @@
+@import './bootstrap.css';
+@import './stylesheet.css';
+@import '../font/css/font-awesome.css';
+
+@media (min-width: 768px){
+    #column-left {width: 260px !important;}
+    #column-left + #content {margin-left: 260px !important;}
+    .bimage {margin:0;}
+}

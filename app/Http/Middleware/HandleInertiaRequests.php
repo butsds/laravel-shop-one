@@ -41,4 +41,14 @@ class HandleInertiaRequests extends Middleware
             ],
         ];
     }
+
+    public function rootView(Request $request)
+    {
+        if ($request->is('admin/*')) {
+            return 'admin';
+        }
+        
+        
+        return $this->rootView;
+    }
 }
