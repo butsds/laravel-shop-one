@@ -2,11 +2,12 @@
 </script>
 
 <template>
-    <div class="tile tile-primary">
-        <div class="tile-heading">Заказов <span class="pull-right">0%</span></div>
-        <div class="tile-body"><i class="fa fa-shopping-cart"></i>
-            <h2 class="pull-right">0</h2>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-globe"></i> heading_title</h3>
         </div>
-        <div class="tile-footer"><a href="/">подробнее...</a></div>
+        <div class="panel-body">
+            <div id="vmap" style="width: 100%; height: 260px;"></div>
+        </div>
     </div>
 </template>

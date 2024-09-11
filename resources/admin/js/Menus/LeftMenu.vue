@@ -1,19 +1,30 @@
 <script setup lang="ts">
+import { defineProps } from 'vue';
+import { Link } from '@inertiajs/vue3';
+import {Menu} from "@/types/components/menu";
+//import { route } from 'ziggy-js';
 
+const props = defineProps<{
+    menu: Menu
+}>();
 
 </script>
 
 <template>
     <ul id="menu">
-        <!-- {% set i = 0 %} -->
-        <!-- {% for menu in menus %} -->
-        <li id="{{ menu.id }}">
+        <li v-for="item in menu.items" :key="item.id" :id="item.id">
+            <template v-if="item.href">
+                <a :href="route(item.href)">
+                    <i :class="`fa ${item.icon} fw`"></i> {{ item.name }}
+                </a>
+            </template>
+
+            <template v-else>
+                <a href="#collapse{{ i }}" data-toggle="collapse" class="parent collapsed"><i class="fa {{ menu.icon }} fw"></i> menu.name</a>
+            </template>
+
             <!-- {% if menu.href %} -->
-            <a href="{{ menu.href }}">
-                <i class="fa {{ menu.icon }} fw"></i> menu.name
-            </a>
             <!-- {% else %} -->
-            <a href="#collapse{{ i }}" data-toggle="collapse" class="parent collapsed"><i class="fa {{ menu.icon }} fw"></i> menu.name</a>
             <!-- {% endif %} -->
             <!-- {% if menu.children %} -->
             <ul id="collapse{{ i }}" class="collapse">
